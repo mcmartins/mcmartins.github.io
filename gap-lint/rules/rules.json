@@ -167,13 +167,12 @@
       "when": {
         "regex": "\\breturn\\b"
       },
-        "then": [
-          {
-            "regex": "(.*);",
-            "inline": true
-          }
-        ]
-      }
+      "then": [
+        {
+          "regex": "(.*);",
+          "inline": true
+        }
+      ]
     },
     {
       "name": "VAR_ASSIGN",
