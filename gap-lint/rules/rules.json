@@ -165,7 +165,8 @@
       "severity": "warning",
       "message": "Missing semicolon.",
       "when": {
-        "regex": "\\breturn\\b/}",
+        "regex": "\\breturn\\b"
+      },
         "then": [
           {
             "regex": "(.*);",
