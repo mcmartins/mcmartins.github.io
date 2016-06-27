@@ -12,7 +12,6 @@
 <body>
 <script src="https://rawgit.com/webgap/CodeMirror/master/lib/codemirror.js"></script>
 <script src="https://rawgit.com/webgap/CodeMirror/master/addon/lint/lint.js"></script>
-<script src="https://rawgit.com/webgap/CodeMirror/master/addon/lint/gap-lint.js"></script>
 <script src="https://rawgit.com/webgap/CodeMirror/master/mode/gap/gap.js"></script>
 <style type="text/css">
     .CodeMirror {
@@ -93,6 +92,13 @@ end;
             lint: true,
             theme: 'dracula'
         });
+		
+		// gap-lint loads rules asynchronously from a remote location, so this should run only after
+		setTimeout(function(){
+			var script = document.createElement('script');
+			script.src = 'https://rawgit.com/webgap/CodeMirror/master/addon/lint/gap-lint.js';
+			document.getElementsByTagName('head')[0].appendChild(script);
+		}, 500);
     </script>
 
     <p><strong>MIME types defined:</strong> <code>text/x-gap</code>.</p>
