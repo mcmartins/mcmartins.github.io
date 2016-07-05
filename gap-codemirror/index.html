@@ -13,6 +13,7 @@
 <script src="https://rawgit.com/webgap/CodeMirror/master/lib/codemirror.js"></script>
 <script src="https://rawgit.com/webgap/CodeMirror/master/addon/lint/lint.js"></script>
 <script src="https://rawgit.com/webgap/CodeMirror/master/mode/gap/gap.js"></script>
+<script src="https://rawgit.com/webgap/CodeMirror/master/addon/lint/gap-lint.js"></script>
 <style type="text/css">
     .CodeMirror {
         border-top: 1px solid black;
@@ -88,20 +89,17 @@ end;
 </textarea>
 
     <script>
-        var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-            mode: 'gap',
-            lineNumbers: true,
-            matchBrackets: true,
-            gutters: ["CodeMirror-lint-markers"],
-            lint: true,
-            theme: 'dracula'
-        });
 	// gap-lint loads rules asynchronously from a remote location, this is a workaround
 	setTimeout(function(){
-		var script = document.createElement('script');
-		script.src = 'https://rawgit.com/webgap/CodeMirror/master/addon/lint/gaplint.js';
-		document.getElementsByTagName('head')[0].appendChild(script);
-	}, 1000);
+	        var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+	            mode: 'gap',
+	            lineNumbers: true,
+	            matchBrackets: true,
+	            gutters: ["CodeMirror-lint-markers"],
+	            lint: true,
+	            theme: 'dracula'
+	        });
+	}, 300);
     </script>
 
     <p><strong>MIME types defined:</strong> <code>text/x-gap</code>.</p>
