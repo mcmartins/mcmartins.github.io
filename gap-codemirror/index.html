@@ -48,6 +48,10 @@ literals
 
 9123really\w\ eir\_\(identifier := 5;
 
+Sum(List([1..100], x -> x^2));
+
+Group\(2\,5\)
+
 f := function(a,b,c)
 local x,y,z,g;
 
@@ -84,21 +88,20 @@ end;
 </textarea>
 
     <script>
-        var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-            mode: 'gap',
-            lineNumbers: true,
-            matchBrackets: true,
-            gutters: ["CodeMirror-lint-markers"],
-            lint: true,
-            theme: 'dracula'
-        });
-		
-		// gap-lint loads rules asynchronously from a remote location, so this should run only after
-		setTimeout(function(){
-			var script = document.createElement('script');
-			script.src = 'https://rawgit.com/webgap/CodeMirror/master/addon/lint/gap-lint.js';
-			document.getElementsByTagName('head')[0].appendChild(script);
-		}, 500);
+	// gap-lint loads rules asynchronously from a remote location, this is a workaround
+	setTimeout(function(){
+		var script = document.createElement('script');
+		script.src = 'https://rawgit.com/webgap/CodeMirror/master/addon/lint/gaplint.js';
+		document.getElementsByTagName('head')[0].appendChild(script);
+	        var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+	            mode: 'gap',
+	            lineNumbers: true,
+	            matchBrackets: true,
+	            gutters: ["CodeMirror-lint-markers"],
+	            lint: true,
+	            theme: 'dracula'
+	        });
+	}, 500);
     </script>
 
     <p><strong>MIME types defined:</strong> <code>text/x-gap</code>.</p>
