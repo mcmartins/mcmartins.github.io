@@ -88,20 +88,20 @@ end;
 </textarea>
 
     <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+            mode: 'gap',
+            lineNumbers: true,
+            matchBrackets: true,
+            gutters: ["CodeMirror-lint-markers"],
+            lint: true,
+            theme: 'dracula'
+        });
 	// gap-lint loads rules asynchronously from a remote location, this is a workaround
 	setTimeout(function(){
 		var script = document.createElement('script');
 		script.src = 'https://rawgit.com/webgap/CodeMirror/master/addon/lint/gaplint.js';
 		document.getElementsByTagName('head')[0].appendChild(script);
-	        var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-	            mode: 'gap',
-	            lineNumbers: true,
-	            matchBrackets: true,
-	            gutters: ["CodeMirror-lint-markers"],
-	            lint: true,
-	            theme: 'dracula'
-	        });
-	}, 500);
+	}, 1000);
     </script>
 
     <p><strong>MIME types defined:</strong> <code>text/x-gap</code>.</p>
