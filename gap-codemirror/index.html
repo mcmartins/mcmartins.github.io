@@ -14,7 +14,7 @@
 <script src="https://rawgit.com/webgap/CodeMirror/master/addon/lint/lint.js"></script>
 <script src="https://rawgit.com/webgap/CodeMirror/master/mode/gap/gap.js"></script>
 <script src="https://rawgit.com/webgap/CodeMirror/master/addon/lint/gap-lint.js"></script>
-<style type="text/css">
+<style type=text/css>
     .CodeMirror {
         border-top: 1px solid black;
         border-bottom: 1px solid black;
@@ -24,6 +24,8 @@
         max-width: none;
         border-left: 1px solid black;
     }
+    .cm-s-dracula span.cm-builtin { color: #16fa05; }
+    .cm-s-dracula span.cm-variable-2 { color: #140dfa; }
 </style>
 
 <article>
@@ -34,6 +36,7 @@
 # Literals
 1234
 .123
+1.7
 7
 2147483647
 
@@ -42,64 +45,80 @@
 "String literals"
 
 """
-Multiline 
+Multiline
 string
 literals
 """
 
+# Identifiers
+a
+foo
+aLongIdentifier ;= n
+hello
+Hello
+HELLO
+x100
+100x
+_100
+some_people_prefer_underscores_to_separate_words
+WePreferMixedCaseToSeparateWords
+abc@def
+G\(2\,5\)asd
 9123really\w\ eir\_\(identifier := 5;
-
-Sum(List([1..100], x -> x^2));
-
 Group\(2\,5\)
 
+# Functions
+Sum(List([1..100], x -> x^2));
+
+2 * 2;
+
+2 * 2 + 9 = Fibonacci(7) and Fibonacci(13) in Primes;
+
+100
+
 f := function(a,b,c)
-local x,y,z,g;
+  local x, y, z, g;
 
-g := Group((1,2,3), (4,5,6));
+  g := Group((1,2,3), (4,5,6));
 
-if IsBound(c[2]) then
-while c[2] > 0 do
-c[3] := 4 - 2;
-od;
-fi;
-   
-if IsGroup(g) then
-Error("This is a group!\n");
-fi;
+  if IsBound(c[2]) then
+    while c[2] > 0 do
+    	c[3] := 4 - 2;
+    od;
+  fi;
 
-x := z{ [1,2,3] };
-z := x{ [1..3] };
+	if IsGroup(g) then
+		Error("This is a group!\n");
+	fi;
 
-if a = true then
-return x + z;
-elif b = 5 then
-return b + 2;
-else
-return a + b + c;
-fi;
+	x := z{ [1,2,3] };
+	z := x{ [1..3] };
+
+  if a = true then
+  	return x + z;
+   elif b = 5 then
+  	return b + 2;
+   else
+  	return a + b + c;
+  fi;
 end;
 
 g := function(x,y)
-atomic readwrite x do
-x[5] := 2;
-od;
+  atomic readwrite x do
+ 	x[5] := 2;
+  od;
 end;
-
 </textarea>
 
     <script>
-	// gap-lint loads rules asynchronously from a remote location, this is a workaround
-	setTimeout(function(){
-	        var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-	            mode: 'gap',
-	            lineNumbers: true,
-	            matchBrackets: true,
-	            gutters: ["CodeMirror-lint-markers"],
-	            lint: true,
-	            theme: 'dracula'
-	        });
-	}, 300);
+        var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+            mode: 'gap',
+            lineNumbers: true,
+            matchBrackets: true,
+            gutters: ["CodeMirror-lint-markers"],
+            lint: true,
+            theme: 'dracula'
+        });
     </script>
 
     <p><strong>MIME types defined:</strong> <code>text/x-gap</code>.</p>
