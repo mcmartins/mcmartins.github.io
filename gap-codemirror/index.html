@@ -3,7 +3,11 @@
 <head>
 <title>CodeMirror: GAP mode</title>
 <meta charset="utf-8"/>
-<script src="https://rawgit.com/mcmartins/gap-lint/master/gap-lint.js"></script>
+    <script src="https://rawgit.com/mcmartins/gap-lint/master/require/require.js"></script>
+    <script type="text/javascript">
+        require('antlr4/index');
+        var GAPLint = require('index');
+    </script>
 <link rel="stylesheet" href="https://rawgit.com/mcmartins/CodeMirror/master/doc/docs.css">
 <link rel="stylesheet" href="https://rawgit.com/mcmartins/CodeMirror/master/lib/codemirror.css">
 <link rel="stylesheet" href="https://rawgit.com/mcmartins/CodeMirror/master/theme/dracula.css">
@@ -34,14 +38,15 @@
 
 
 <textarea id=code>
-# Literals
-1234
-.123
-1.7
-7
-2147483647
 
-(1,2,3)(4,5,6)
+# Literals
+1234;
+.123;
+1.7;
+7;
+2147483647;
+
+(1,2,3)(4,5,6);
 
 "String literals"
 
@@ -52,21 +57,21 @@ literals
 """
 
 # Identifiers
-a
-foo
-aLongIdentifier ;= n
-hello
-Hello
-HELLO
-x100
-100x
-_100
-some_people_prefer_underscores_to_separate_words
-WePreferMixedCaseToSeparateWords
-abc@def
-G\(2\,5\)asd
+a;
+foo;
+aLongIdentifier := n;
+hello;
+Hello;
+HELLO;
+x100;
+100x;
+_100;
+some_people_prefer_underscores_to_separate_words;
+WePreferMixedCaseToSeparateWords;
+abc@def;
+G\(2\,5\)asd;
 9123really\w\ eir\_\(identifier := 5;
-Group\(2\,5\)
+Group\(2\,5\);
 
 # Functions
 Sum(List([1..100], x -> x^2));
@@ -75,7 +80,7 @@ Sum(List([1..100], x -> x^2));
 
 2 * 2 + 9 = Fibonacci(7) and Fibonacci(13) in Primes;
 
-100
+100;
 
 InstallGlobalFunction(MyGlobalFunction,
 function(a,b,c)
@@ -116,6 +121,7 @@ g := function(x,y)
   x[5] := 2;
   od;
 end;
+
 </textarea>
 
     <script>
