@@ -1,4 +1,4 @@
-// Generated from gap.g4 by ANTLR 4.5.3
+// Generated from /media/sf_GitHub/gap-lint/gap.g4 by ANTLR 4.5.3
 // jshint ignore: start
 var antlr4 = require('antlr4/index');
 
@@ -311,10 +311,10 @@ gapLexer.Pow = 26;
 gapLexer.Excl = 27;
 gapLexer.GT = 28;
 gapLexer.LT = 29;
-gapLexer.Add = 30;
-gapLexer.Subtract = 31;
-gapLexer.Multiply = 32;
-gapLexer.Divide = 33;
+gapLexer.Plus = 30;
+gapLexer.Minus = 31;
+gapLexer.Star = 32;
+gapLexer.Slash = 33;
 gapLexer.Modulus = 34;
 gapLexer.OBrace = 35;
 gapLexer.CBrace = 36;
@@ -327,7 +327,7 @@ gapLexer.Assign = 42;
 gapLexer.Comma = 43;
 gapLexer.QMark = 44;
 gapLexer.Colon = 45;
-gapLexer.SHandFunc = 46;
+gapLexer.ShortHandFunction = 46;
 gapLexer.Range = 47;
 gapLexer.Boolean = 48;
 gapLexer.Number = 49;
@@ -354,21 +354,21 @@ gapLexer.symbolicNames = [ null, null, "Function", "Input", "Local", "If",
                            "Then", "Elif", "Else", "Fi", "Return", "For", 
                            "While", "Do", "Od", "End", "In", "Repeat", "Until", 
                            "Not", "Or", "And", "Equals", "NEquals", "GTEquals", 
-                           "LTEquals", "Pow", "Excl", "GT", "LT", "Add", 
-                           "Subtract", "Multiply", "Divide", "Modulus", 
-                           "OBrace", "CBrace", "OBracket", "CBracket", "OParen", 
-                           "CParen", "SColon", "Assign", "Comma", "QMark", 
-                           "Colon", "SHandFunc", "Range", "Boolean", "Number", 
+                           "LTEquals", "Pow", "Excl", "GT", "LT", "Plus", 
+                           "Minus", "Star", "Slash", "Modulus", "OBrace", 
+                           "CBrace", "OBracket", "CBracket", "OParen", "CParen", 
+                           "SColon", "Assign", "Comma", "QMark", "Colon", 
+                           "ShortHandFunction", "Range", "Boolean", "Number", 
                            "Identifier", "String", "Comment", "Space", "EOL" ];
 
 gapLexer.ruleNames = [ "T__0", "Function", "Input", "Local", "If", "Then", 
                        "Elif", "Else", "Fi", "Return", "For", "While", "Do", 
                        "Od", "End", "In", "Repeat", "Until", "Not", "Or", 
                        "And", "Equals", "NEquals", "GTEquals", "LTEquals", 
-                       "Pow", "Excl", "GT", "LT", "Add", "Subtract", "Multiply", 
-                       "Divide", "Modulus", "OBrace", "CBrace", "OBracket", 
+                       "Pow", "Excl", "GT", "LT", "Plus", "Minus", "Star", 
+                       "Slash", "Modulus", "OBrace", "CBrace", "OBracket", 
                        "CBracket", "OParen", "CParen", "SColon", "Assign", 
-                       "Comma", "QMark", "Colon", "SHandFunc", "Range", 
+                       "Comma", "QMark", "Colon", "ShortHandFunction", "Range", 
                        "Boolean", "Number", "Identifier", "String", "Comment", 
                        "Space", "EOL", "ESC", "Integer", "Digit" ];
 
