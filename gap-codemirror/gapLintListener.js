@@ -17,7 +17,6 @@ GAPLintListener.prototype.syntaxError = function (recognizer, offendingSymbol, l
     type: "error"
   });
 };
-
 GAPLintListener.prototype.getErrors = function () {
   return errors;
 };
