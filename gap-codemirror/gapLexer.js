@@ -384,3 +384,26 @@ gapLexer.ruleNames = ["Function", "Input", "Local", "If", "Then", "Elif",
 gapLexer.grammarFileName = "gap.g4";
 
 exports.gapLexer = gapLexer;
+                                                                                                                                                                                                                           "Dot", "QuestionMark", "Colon", "ShortHandFunction", 
+                           "Range", "ComponentObject", "Boolean", "Number", 
+                           "Quote", "TrippleQuote", "Identifier", "Comment", 
+                           "Space", "EOL" ];
+
+gapLexer.ruleNames = [ "Function", "Input", "Local", "If", "Then", "Elif", 
+                       "Else", "Fi", "Return", "For", "While", "Do", "Od", 
+                       "End", "In", "Repeat", "Until", "Not", "Or", "And", 
+                       "Equals", "NEquals", "GTEquals", "LTEquals", "Pow", 
+                       "Excl", "GT", "LT", "Plus", "Minus", "Star", "Slash", 
+                       "Modulus", "OBrace", "CBrace", "OBracket", "CBracket", 
+                       "OParen", "CParen", "SemiColon", "Assign", "Comparison", 
+                       "Comma", "Dot", "QuestionMark", "Colon", "ShortHandFunction", 
+                       "Range", "ComponentObject", "Boolean", "Number", 
+                       "Quote", "TrippleQuote", "Identifier", "Comment", 
+                       "Space", "EOL", "ESC", "Integer", "Digit" ];
+
+gapLexer.grammarFileName = "gap.g4";
+
+
+
+exports.gapLexer = gapLexer;
+
