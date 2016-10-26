@@ -1,0 +1,2 @@
+/* gap-lint v1.0.0, Manuel Martins - Generated on 26-10-2016 */
+function ATNDeserializationOptions(copyFrom){return void 0===copyFrom&&(copyFrom=null),this.readOnly=!1,this.verifyATN=null===copyFrom||copyFrom.verifyATN,this.generateRuleBypassTransitions=null!==copyFrom&&copyFrom.generateRuleBypassTransitions,this}ATNDeserializationOptions.defaultOptions=new ATNDeserializationOptions,ATNDeserializationOptions.defaultOptions.readOnly=!0,exports.ATNDeserializationOptions=ATNDeserializationOptions;

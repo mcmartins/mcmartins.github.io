@@ -1,0 +1,2 @@
+/* gap-lint v1.0.0, Manuel Martins - Generated on 26-10-2016 */
+var Tree=require("./Tree");exports.Trees=require("./Trees").Trees,exports.RuleNode=Tree.RuleNode,exports.ParseTreeListener=Tree.ParseTreeListener,exports.ParseTreeVisitor=Tree.ParseTreeVisitor,exports.ParseTreeWalker=Tree.ParseTreeWalker;

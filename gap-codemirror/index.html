@@ -1,43 +1,51 @@
 <!doctype html>
 <html>
 <head>
-<title>CodeMirror: GAP mode</title>
-<meta charset="utf-8"/>
-    <script src="https://rawgit.com/mcmartins/gap-lint/master/require/require.js"></script>
-    <script type="text/javascript">
-        require('antlr4/index');
-        var GAPLint = require('index');
-    </script>
-<link rel="stylesheet" href="https://rawgit.com/mcmartins/CodeMirror/master/doc/docs.css">
-<link rel="stylesheet" href="https://rawgit.com/mcmartins/CodeMirror/master/lib/codemirror.css">
-<link rel="stylesheet" href="https://rawgit.com/mcmartins/CodeMirror/master/theme/dracula.css">
-<link rel="stylesheet" href="https://rawgit.com/mcmartins/CodeMirror/master/addon/lint/lint.css">
+  <title>CodeMirror: GAP mode</title>
+  <meta charset="utf-8"/>
+  <script src="https://rawgit.com/mcmartins/gap-lint/master/require/require.min.js"></script>
+  <script type="text/javascript">
+    require('dist/lantlr4/index');
+    require('dist/index');
+  </script>
+  <script src="https://rawgit.com/mcmartins/CodeMirror/master/lib/codemirror.js"></script>
+  <script src="https://rawgit.com/mcmartins/CodeMirror/master/addon/lint/lint.js"></script>
+  <script src="https://rawgit.com/mcmartins/CodeMirror/master/addon/mode/simple.js"></script>
+  <script src="https://rawgit.com/mcmartins/CodeMirror/master/mode/gap/gap.js"></script>
+  <script src="https://rawgit.com/mcmartins/CodeMirror/master/addon/lint/gap-lint.js"></script>
+  <link rel="stylesheet" href="https://rawgit.com/mcmartins/CodeMirror/master/doc/docs.css">
+  <link rel="stylesheet" href="https://rawgit.com/mcmartins/CodeMirror/master/lib/codemirror.css">
+  <link rel="stylesheet" href="https://rawgit.com/mcmartins/CodeMirror/master/theme/dracula.css">
+  <link rel="stylesheet" href="https://rawgit.com/mcmartins/CodeMirror/master/addon/lint/lint.css">
+  <style type=text/css>
+    .CodeMirror {
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      height: 530px;
+    }
+
+    article {
+      max-width: none;
+      border-left: 1px solid black;
+    }
+
+    .cm-s-dracula span.cm-builtin {
+      color: #16fa05;
+    }
+
+    .cm-s-dracula span.cm-variable-2 {
+      color: #140dfa;
+    }
+  </style>
 </head>
 <body>
-<script src="https://rawgit.com/mcmartins/CodeMirror/master/lib/codemirror.js"></script>
-<script src="https://rawgit.com/mcmartins/CodeMirror/master/addon/lint/lint.js"></script>
-<script src="https://rawgit.com/mcmartins/CodeMirror/master/addon/mode/simple.js"></script>
-<script src="https://rawgit.com/mcmartins/CodeMirror/master/mode/gap/gap.js"></script>
-<script src="https://rawgit.com/mcmartins/CodeMirror/master/addon/lint/gap-lint.js"></script>
-<style type=text/css>
-    .CodeMirror {
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
-        height: 530px;
-    }
-    article {
-        max-width: none;
-        border-left: 1px solid black;
-    }
-    .cm-s-dracula span.cm-builtin { color: #16fa05; }
-    .cm-s-dracula span.cm-variable-2 { color: #140dfa; }
-</style>
+
 
 <article>
-    <h2>GAP mode testing</h2>
+  <h2>GAP mode testing</h2>
 
 
-<textarea id=code>
+  <textarea id=code>
 # Literals
 1234;
 .123;
@@ -120,18 +128,18 @@ g := function(x,y)
 end;
 </textarea>
 
-    <script>
-        var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-            mode: 'gap',
-            lineNumbers: true,
-            matchBrackets: true,
-            gutters: ["CodeMirror-lint-markers"],
-            lint: true,
-            theme: 'dracula'
-        });
-    </script>
+  <script>
+    CodeMirror.fromTextArea(document.getElementById('code'), {
+      mode: 'gap',
+      lineNumbers: true,
+      matchBrackets: true,
+      gutters: ["CodeMirror-lint-markers"],
+      lint: true,
+      theme: 'dracula'
+    });
+  </script>
 
-    <p><strong>MIME types defined:</strong> <code>text/x-gap</code>.</p>
+  <p><strong>MIME types defined:</strong> <code>text/x-gap</code>.</p>
 </article>
 </body>
 </html>

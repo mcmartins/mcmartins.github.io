@@ -1,0 +1,2 @@
+/* gap-lint v1.0.0, Manuel Martins - Generated on 26-10-2016 */
+var antlr4=require("dist/antlr4/index"),GapLexer=require("dist/gapLexer").gapLexer,GapParser=require("dist/gapParser").gapParser,GAPLintListener=require("dist/gapLintListener").GAPLintListener;window.GapLint={validate:function(input){var chars=new antlr4.InputStream(input),lexer=new GapLexer(chars),tokens=new antlr4.CommonTokenStream(lexer),parser=new GapParser(tokens),listener=new GAPLintListener;return parser.removeErrorListeners(),parser.addErrorListener(listener),parser.parse(),listener}};
